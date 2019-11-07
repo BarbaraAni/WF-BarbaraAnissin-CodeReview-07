@@ -1,1 +1,55 @@
-<p>travels works!</p>
+<div class="row">
+    <div class="col-md-7">
+      <form [formGroup]="this.travelService.form" (ngSubmit)="onSubmit()">
+        <input type="hidden" formControlName="$key">
+        <div class="form-group">
+          <label>City</label> <!--maybe dropdown-->
+          <input formControlName="place" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.place.errors}">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.place.errors">This field is required</div>
+        </div>
+        <div class="form-group">
+          <label>Duration of Stay</label>
+          <input type="number" formControlName="duration" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.duration.errors}">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.duration.errors">This field is required</div>
+        </div>
+        <div class="form-group">
+            <label>Rating out of 10</label>
+            <input type="number" formControlName="rating" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.rating.errors}">
+            <div class="invalid-feedback" *ngIf="submitted && formControls.rating.errors">This field is required</div>
+          </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" value="Submit">
+        </div>
+      </form>
+      <div class="alert alert-info" *ngIf="showSuccessMessage">
+        Submitted successfully!
+      </div>
+    </div>
+    <div class="col-md-5">
+        <form class="form-inline">
+            <input name="searchInput" class="form-control" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
+            <button class="btn btn-outline-primary" (click)="searchText=''">x</button>
+        </form>
+        <table class="table table-sm">
+            <thead>
+                <th>City</th>
+                <th>Duration</th>
+                <th>Rating</th>
+                <th></th>
+            </thead>
+            <ng-container *ngFor="let travel of travelArray">
+                <tr *ngIf="filterCondition(travel)">
+                    <td>{{travel.place}}</td>
+                    <td>{{travel.duration}}</td>
+                    <td>{{travel.rating}}</td>
+                    <td>
+                        <button class="btn btn-info" (click)="travelService.populateForm(travel)">Edit</button>
+                        <button class="btn btn-danger" (click)="onDelete(travel.$key)">Delete</button>
+                    </td>
+                </tr>
+            </ng-container>
+        </table>
+        <div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
+    </div>
+  </div>
+  

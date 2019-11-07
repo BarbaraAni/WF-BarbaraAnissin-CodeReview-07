@@ -13,7 +13,8 @@ export class TravelService {
 	form = new FormGroup({
         $key: new FormControl(null),
         place: new FormControl('', Validators.required),
-        duration: new FormControl('', Validators.required)
+        duration: new FormControl('', Validators.required),
+        rating: new FormControl('', Validators.required)
     });
     getTravel(){
         this.travelList = this.firebase.list('travel');
@@ -23,6 +24,7 @@ export class TravelService {
         this.travelList.push({
             place: travel.place,
             duration: travel.duration, 
+            rating: travel.rating
         });
     }
     populateForm(travel){
@@ -32,6 +34,7 @@ export class TravelService {
         this.travelList.update(travel.$key,{
             place: travel.place,
             duration: travel.duration,
+            rating: travel.rating
         });
     }
     deleteTravel($key: string){
