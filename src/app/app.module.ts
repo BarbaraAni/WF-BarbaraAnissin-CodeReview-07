@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BlogComponent } from './blog/blog.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeroComponent } from './hero/hero.component';
 import { HomeComponent } from './home/home.component';
 import { TravelsComponent } from './travels/travels.component';
 import { TravelService } from './shared/travel.service';
@@ -23,6 +24,7 @@ import { environment } from "../environments/environment";
     NavbarComponent,
     BlogComponent,
     FooterComponent,
+    HeroComponent,
     HomeComponent,
     TravelsComponent
   ],

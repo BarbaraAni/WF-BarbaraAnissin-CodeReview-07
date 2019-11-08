@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="col-md-7">
+<div class="row pt-2">
+    <div class="col-sm-10 offset-sm-1 col-md-7 offset-md-0">
       <form [formGroup]="this.travelService.form" (ngSubmit)="onSubmit()">
         <input type="hidden" formControlName="$key">
         <div class="form-group">
@@ -25,10 +25,10 @@
         Submitted successfully!
       </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-5 col-sm-10 offset-sm-1 offset-md-0">
         <form class="form-inline">
-            <input name="searchInput" class="form-control" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
-            <button class="btn btn-outline-primary" (click)="searchText=''">x</button>
+            <input name="searchInput" class="form-control mb-1" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
+            <button class="btn btn-outline-primary mb-1" (click)="searchText=''">x</button>
         </form>
         <table class="table table-sm">
             <thead>

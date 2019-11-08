@@ -1,0 +1,9 @@
+.font{
+    font-family: 'Yeon Sung', cursive;
+    text-shadow: 0 0 10px lightcyan;
+    background-image: linear-gradient(-30deg, lightblue, #D5E1ED,#FDC98F, #D8C6C6, lightblue);
+    width: 102.87%;
+    margin-left: -15px;
+    font-weight: bold;
+}
+    

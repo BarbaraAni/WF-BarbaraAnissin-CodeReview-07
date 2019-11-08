@@ -1,0 +1,28 @@
+.absolute {
+    max-height: 700px;
+    margin-bottom: 10px;
+}
+.absoluteText {
+    position: absolute;
+    top: 40%;
+    right: 13%;
+    text-shadow: 0 0 3px black;
+}
+
+@media (max-width: 1000px){
+    .absoluteText {
+        font-size: 3em;
+    }
+}
+@media (max-width: 800px){
+    .absoluteText {
+        font-size: 2em;
+    }
+}
+@media (max-width: 600px){
+    .absoluteText {
+        font-size: 1.6em;
+        top: 30%;
+        right: 33%;
+    }
+}
